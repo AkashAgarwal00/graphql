@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { createStudent } from './graphql/mutations';
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
 import * as mutations from './graphql/mutations';
+import { withAuthenticator } from "@aws-amplify/ui-react";
 // import {
 //   BrowserRouter as Router,
 //   Routes,
@@ -21,12 +22,12 @@ function App() {
 
   const student = {
     name: name,
-    rollno: rollno
+    rollNo: rollno
   }
 
   const eventHandler = async () => {
     try {
-      const userData = await API.graphql({query:mutations.createStudent, variables:{input:student}})
+      const userData = await API.graphql({ query: mutations.createStudent, variables: { input: student } })
       console.log(userData);
     } catch (err) {
       console.log('error creating student:', err)
@@ -48,13 +49,13 @@ function App() {
       </div>
       <div className='container'>
         <div className="mb-3">
-          <h4> Roll number </h4>
-          <input type="text" className="form-control" onChange={(name) => setName(name.target.value)}  autoFocus autoComplete='off' aria-describedby="emailHelp" />
+          <h4> Name </h4>
+          <input type="text" className="form-control" onChange={(name) => setName(name.target.value)} autoFocus autoComplete='off' aria-describedby="emailHelp" />
           <div className="form-text"></div>
         </div>
         <div className="mb-3">
-          <h4> Name </h4>
-          <input type="text" className="form-control" autoComplete='off' onChange={(rollno) => setRollNo(rollno.target.value)} />
+          <h4>Roll no</h4>
+          <input type="Number" className="form-control" autoComplete='off' onChange={(rollno) => setRollNo(rollno.target.value)} />
         </div>
         <button type="button" className="btn btn-primary" onClick={eventHandler}>Submit</button>
         {/* <Link to='/'> <button type="button" class="btn btn-primary"> Go Back </button> </Link> */}
@@ -63,4 +64,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
