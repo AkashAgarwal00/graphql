@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "auth",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\HP\\Desktop\\React internship\\formik_1\\amplify\\backend\\api\\auth\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authauthafb5e748"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 7,
+        "apiKeyExpirationDate": "2022-07-23T05:00:20.346Z",
+        "keyDescription": "debangshu"
+      }
+    ]
+  }
+}

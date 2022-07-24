@@ -1,0 +1,21 @@
+.App {
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 60%;
+}
+
+.btn {
+  height: 40px;
+  width: 100px;
+  margin: 2px;
+}
+
+
+
+
