@@ -30,3 +30,32 @@ export const listStudents = /* GraphQL */ `
     }
   }
 `;
+export const getNotice = /* GraphQL */ `
+  query GetNotice($id: ID!) {
+    getNotice(id: $id) {
+      id
+      description
+      noticeStudentId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listNotices = /* GraphQL */ `
+  query ListNotices(
+    $filter: ModelNoticeFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listNotices(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        description
+        noticeStudentId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

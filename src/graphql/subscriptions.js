@@ -34,3 +34,36 @@ export const onDeleteStudent = /* GraphQL */ `
     }
   }
 `;
+export const onCreateNotice = /* GraphQL */ `
+  subscription OnCreateNotice {
+    onCreateNotice {
+      id
+      description
+      noticeStudentId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateNotice = /* GraphQL */ `
+  subscription OnUpdateNotice {
+    onUpdateNotice {
+      id
+      description
+      noticeStudentId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteNotice = /* GraphQL */ `
+  subscription OnDeleteNotice {
+    onDeleteNotice {
+      id
+      description
+      noticeStudentId
+      createdAt
+      updatedAt
+    }
+  }
+`;

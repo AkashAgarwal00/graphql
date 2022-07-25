@@ -43,3 +43,45 @@ export const deleteStudent = /* GraphQL */ `
     }
   }
 `;
+export const createNotice = /* GraphQL */ `
+  mutation CreateNotice(
+    $input: CreateNoticeInput!
+    $condition: ModelNoticeConditionInput
+  ) {
+    createNotice(input: $input, condition: $condition) {
+      id
+      description
+      noticeStudentId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateNotice = /* GraphQL */ `
+  mutation UpdateNotice(
+    $input: UpdateNoticeInput!
+    $condition: ModelNoticeConditionInput
+  ) {
+    updateNotice(input: $input, condition: $condition) {
+      id
+      description
+      noticeStudentId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteNotice = /* GraphQL */ `
+  mutation DeleteNotice(
+    $input: DeleteNoticeInput!
+    $condition: ModelNoticeConditionInput
+  ) {
+    deleteNotice(input: $input, condition: $condition) {
+      id
+      description
+      noticeStudentId
+      createdAt
+      updatedAt
+    }
+  }
+`;

@@ -5,8 +5,14 @@ input AMPLIFY {
 } # FOR TESTING ONLY!
 type student
   @model
-  @auth(rules: [{ allow: private, operations: [read, create, update] }]) {
+  @auth(rules: [{ allow: private, operations: [read, create, update, delete] }]) {
   id: ID!
   name: String!
   rollNo: Int!
+  notice: [Notice] @hasMany
+}
+
+type Notice @model {
+  id: ID!
+  description: String!
 }
