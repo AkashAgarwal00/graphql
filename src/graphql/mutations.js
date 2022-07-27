@@ -10,6 +10,9 @@ export const createStudent = /* GraphQL */ `
       id
       name
       rollNo
+      notice {
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -24,6 +27,9 @@ export const updateStudent = /* GraphQL */ `
       id
       name
       rollNo
+      notice {
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -38,6 +44,9 @@ export const deleteStudent = /* GraphQL */ `
       id
       name
       rollNo
+      notice {
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -51,9 +60,9 @@ export const createNotice = /* GraphQL */ `
     createNotice(input: $input, condition: $condition) {
       id
       description
-      noticeStudentId
       createdAt
       updatedAt
+      studentNoticeId
     }
   }
 `;
@@ -65,9 +74,9 @@ export const updateNotice = /* GraphQL */ `
     updateNotice(input: $input, condition: $condition) {
       id
       description
-      noticeStudentId
       createdAt
       updatedAt
+      studentNoticeId
     }
   }
 `;
@@ -79,9 +88,9 @@ export const deleteNotice = /* GraphQL */ `
     deleteNotice(input: $input, condition: $condition) {
       id
       description
-      noticeStudentId
       createdAt
       updatedAt
+      studentNoticeId
     }
   }
 `;

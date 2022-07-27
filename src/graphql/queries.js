@@ -7,6 +7,9 @@ export const getStudent = /* GraphQL */ `
       id
       name
       rollNo
+      notice {
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -35,9 +38,9 @@ export const getNotice = /* GraphQL */ `
     getNotice(id: $id) {
       id
       description
-      noticeStudentId
       createdAt
       updatedAt
+      studentNoticeId
     }
   }
 `;
@@ -51,9 +54,9 @@ export const listNotices = /* GraphQL */ `
       items {
         id
         description
-        noticeStudentId
         createdAt
         updatedAt
+        studentNoticeId
       }
       nextToken
     }
